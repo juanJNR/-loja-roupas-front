@@ -1,0 +1,49 @@
+import { Card } from "./components/Card";
+import { InputPesquisa } from "./components/InputPesquisa";
+import type { ProdutoType } from "./utils/ProdutoType";
+import { useEffect, useState } from "react";
+import { useClienteStore } from "./context/ClienteContext"
+
+const apiUrl = import.meta.env.VITE_API_URL
+
+export default function App() {
+  const [produtos, setProdutos] = useState<ProdutoType[]>([])
+  const { logaCliente } = useClienteStore()
+
+  useEffect(() => {
+    async function buscaDados() {
+      const response = await fetch(`${apiUrl}/produtos/destaques`)
+      const dados = await response.json()
+      setProdutos(dados)
+    }
+    buscaDados()
+
+    async function buscaCliente(id: string) {
+      const response = await fetch(`${apiUrl}/clientes/${id}`)
+      const dados = await response.json()
+      logaCliente(dados)
+    }
+    if (localStorage.getItem("clienteKey")) {
+      const idCliente = localStorage.getItem("clienteKey")
+      buscaCliente(idCliente as string)
+    }
+  }, [])
+
+  const listaProdutos = produtos.map(produto => (
+    <Card data={produto} key={produto.id} />
+  ))
+
+  return (
+    <>
+      <InputPesquisa setProdutos={setProdutos} />
+      <div className="max-w-7xl mx-auto">
+        <h1 className="mb-4 text-4xl font-extrabold leading-none tracking-tight text-gray-900 md:text-5xl lg:text-6xl dark:text-gray-400">
+          Produtos <span className="underline underline-offset-3 decoration-8 decoration-orange-400 dark:decoration-orange-600">em destaque</span>
+        </h1>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+          {listaProdutos}
+        </div>
+      </div>
+    </>
+  );
+}

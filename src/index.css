@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+/* Paleta de Cores Padronizada */
+:root {
+    --primary: #2563eb;
+    /* Azul */
+    --primary-dark: #1e40af;
+    --secondary: #10b981;
+    /* Verde */
+    --danger: #ef4444;
+    /* Vermelho */
+    --warning: #f59e0b;
+    /* Amarelo */
+    --text-primary: #1f2937;
+    /* Cinza escuro */
+    --text-secondary: #6b7280;
+    /* Cinza médio */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f3f4f6;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    color: var(--text-primary);
+}
