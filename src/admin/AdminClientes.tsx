@@ -59,10 +59,10 @@ export default function AdminClientes() {
                                     {cliente.email}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {cliente.cidade}
+                                    {cliente.cidade || '-'}
                                 </td>
                                 <td className="px-6 py-4">
-                                    {new Date(cliente.createdAt).toLocaleDateString('pt-BR')}
+                                    {cliente.createdAt ? new Date(cliente.createdAt).toLocaleDateString('pt-BR') : '-'}
                                 </td>
                             </tr>
                         ))}
