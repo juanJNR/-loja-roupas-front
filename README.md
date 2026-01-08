@@ -1,69 +1,60 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+---
 
-Currently, two official plugins are available:
+# 📘 README — `loja-roupas-front`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```md
+# 🛍️ Loja de Roupas — Frontend
 
-## Expanding the ESLint configuration
+## 📚 Trabalho Acadêmico — Linguagens de Programação Emergentes
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Projeto **Frontend** desenvolvido para o **Trabalho #1** da disciplina  
+**Linguagens de Programação Emergentes**, integrando-se a uma API REST para formar
+uma aplicação **Full Stack** completa.
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+O sistema simula a rotina de uma **loja de roupas**, permitindo interação entre clientes,
+produtos e administradores.
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+---
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🎯 Objetivo do Projeto
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- Consumir uma API REST
+- Desenvolver interface web funcional
+- Implementar autenticação de usuários
+- Trabalhar com **LocalStorage**
+- Atender todos os requisitos avaliativos da disciplina
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧩 Funcionalidades do Sistema
+
+### Área do Cliente
+- Visualização dos produtos (destaques, recentes, melhor avaliados)
+- Pesquisa e filtro de produtos
+- Cadastro e login de clientes
+- Manter cliente conectado via **LocalStorage (UUID)**
+- Visualização de detalhes do produto
+- Interação com produtos (avaliações, comentários, propostas)
+- Visualização das próprias interações e respostas
+
+### Área Administrativa
+- Acesso restrito para administradores
+- Cadastro e gerenciamento de produtos
+- Visualização e resposta às interações dos clientes
+- **Dashboard com gráficos** de visão geral do sistema
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+- **TypeScript**
+- **Vite**
+- **Tailwind CSS**
+- **HTML / CSS**
+- **Consumo de API REST**
+- **LocalStorage**
+
+---
+
+Deploy --> https://loja-roupas-front.vercel.app/
